@@ -7,4 +7,29 @@
   // replace this with a color that compliments your GIF
   const bgColor = '#e585ca'
   
+  function createGif(x, y, w, h, url) {
+    nn.create('img')
+      .set({ src: url })
+      .css({
+        position: 'absolute',
+        left: x + 'px',
+        top: `${y}px`
+      })
+  }
+  
+  function setup() {
+    // const b = nn.get('body')
+    // const style = { 
+    //   'background-color' : bgColor, 
+    //   fontSize : '24px',
+    //   'width': '100px',
+    // }
+    // b.css(style)
+    
+    nn.get('body').css({ 'background-color' : bgColor })
+    createGif(100, 300, 108, 200, gifURL)
+  }
+  
+  nn.on('load', setup)
+  
 </script>
