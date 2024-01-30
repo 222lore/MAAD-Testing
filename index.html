@@ -9,7 +9,7 @@
   
   function createGif(x, y, w, h, url) {
     nn.create('img')
-      .set({ src: url })
+      .set({ src: `${url}#${nn.random()}` })
       .css({
         position: 'absolute',
         left: x + 'px',
@@ -30,11 +30,11 @@
     // b.css(style)
     
     const numColumns = 100
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < numColumns; i++) {
       const width = 100
-      const x = i * (width * 2) // (nn.width / 2) - (width / 2)
-      for (let j = 0; j < 100; j++) {
-        const y = j * (width * 2) // (nn.height / 2) - (width / 2)
+      const x = i * (width) // (nn.width / 2) - (width / 2)
+      for (let j = 0; j < numColumns; j++) {
+        const y = j * (width) // (nn.height / 2) - (width / 2)
         createGif(x, y, width, width, gifURL)
       }      
     }
